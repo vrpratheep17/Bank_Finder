@@ -1,0 +1,29 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col-1">IFSC CODE</th>
+      <th scope="col-2">BANK NAME</th>
+      <th scope="col-1">BANK_ID</th>
+      <th scope="col-1">BRANCH</th>
+      <th scope="col-2">ADDRESS</th>
+      <th scope="col-1">CITY</th>
+      <th scope="col-2">DISTRICT</th>
+      <th scope="col-2">STATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <td>{{ifsc}}</td>
+      <td>{{bank_name}}</td>
+      <td>{{bank_id}}</td>
+      <td>{{branch}}</td>
+      <td>{{address}}</td>
+      <td>{{city}}</td>
+      <td>{{district}}</td>
+      <td>{{state}}</td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>
