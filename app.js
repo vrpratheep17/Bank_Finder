@@ -26,13 +26,17 @@ mongoose
     console.log("database is down");
   });
 
+//@desc first index page
 app.get("/", (req, res) => {
   res.render("index");
 });
 
+//@desc ifsc code input page
 app.get("/ifsc", (req, res) => {
   res.render("ifsc");
 });
+
+//@desc ifsc code search
 app.post("/ifsc", (req, res) => {
   New.findOne({ ifsc: req.body.password }).then(data => {
     res.render("ill", {
@@ -41,10 +45,12 @@ app.post("/ifsc", (req, res) => {
   });
 });
 
+//@desc name and city input page
 app.get("/namecity", (req, res) => {
   res.render("namecity");
 });
 
+//@desc name and city search
 app.post("/bncity", (req, res) => {
   New.find({
     bank_name: req.body.name,
@@ -56,18 +62,11 @@ app.post("/bncity", (req, res) => {
   });
 });
 
+//@desc about page
 app.get("/about", (req, res) => {
   res.render("about");
 });
-app.get("/akk", (req, res) => {
-  New.find({})
-    .limit(10)
-    .then(data => {
-      res.render("akk", {
-        rows: data
-      });
-    });
-});
-app.listen(process.env.PORT, () => {
-  console.log("server is running ");
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("server is running");
 });
