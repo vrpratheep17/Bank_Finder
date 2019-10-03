@@ -9,7 +9,7 @@ require("./models/New");
 const New = mongoose.model("newdata");
 
 //bodyparser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended:false}));
 app.use(bodyParser.json());
 //handlebars middleware
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
